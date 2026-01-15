@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        #dataTable {
+            margin-top: 20px;
+        }
+
+        #doneButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table id="dataTable">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Mobile No</th>
+            <th>Gender</th>
+        </tr>
+        <tr id="dataRow">
+            <td id="fnameData"></td>
+            <td id="snameData"></td>
+            <td id="emailData"></td>
+            <td id="passData"></td>
+            <td id="addressData"></td>
+            <td id="mobileNoData"></td>
+            <td id="genderData"></td>
+        </tr>
+    </table>
+
+    <button id="pricingButton" onclick="window.location.href='price.html'">VIEW PRICING PLAN</button>
+
+
+    <script>
+        // function to calculate BMI
+        function calculateBMI(weight, height) {
+          return weight / (height * height);
+        }
+
+        // function to show the result
+        function showResult(bmi, fname, sname, email, pass, address, mobileNo, gender) {
+          var result = document.querySelector('.result');
+          var bmiStatus;
+          if (bmi < 18.5) {
+            bmiStatus = 'Underweight';
+          } else if (bmi < 25) {
+            bmiStatus = 'Normal';
+          } else if (bmi < 30) {
+            bmiStatus = 'Overweight';
+          } else {
+            bmiStatus = 'Obese';
+          }
+          result.innerHTML = `<div class=${bmiStatus}>Your BMI is ${bmi.toFixed(2)} and you are ${bmiStatus}.</div>`;
+          var doneButton = document.createElement('button');
+          doneButton.textContent = 'Done';
+          doneButton.id = 'doneButton';
+          doneButton.style.display = 'block';
+          doneButton.style.margin = '20px auto';
+          result.appendChild(doneButton);
+
+          // save the user's data to localStorage
+          saveData(fname, sname, email, pass, address, mobileNo, gender);
+
+          // attach event listener to the button
+          doneButton.addEventListener('click', function() {
+            window.location.href = 'data.html';
+          });
+        }
+
+        // function to save data
+        function saveData(fname, sname, email, pass, address, mobileNo, gender) {
+          localStorage.setItem('fname', fname);
+          localStorage.setItem('sname', sname);
+          localStorage.setItem('email', email);
+          localStorage.setItem('pass', pass);
+          localStorage.setItem('address', address);
+          localStorage.setItem('mobileNo', mobileNo);
+          localStorage.setItem('gender', gender);
+        }
+
+        // function to retrieve data
+        function retrieveData() {
+          var fname = localStorage.getItem('fname');
+          var sname = localStorage.getItem('sname');
+          var email = localStorage.getItem('email');
+          var pass = localStorage.getItem('pass');
+          var address = localStorage.getItem('address');
+          var mobileNo = localStorage.getItem('mobileNo');
+          var gender = localStorage.getItem('gender');
+
+          document.getElementById('fnameData').innerHTML = fname;
+          document.getElementById('snameData').innerHTML = sname;
+          document.getElementById('emailData').innerHTML = email;
+          document.getElementById('passData').innerHTML = pass;
+          document.getElementById('addressData').innerHTML = address;
+          document.getElementById('mobileNoData').innerHTML = mobileNo;
+          document.getElementById('genderData').innerHTML = gender;
+        }
+
+        // retrieve data when the page loads
+        retrieveData();
+
+        // add event listener to the calculate button
+        document.getElementById('calculateButton').addEventListener('click', function() {
+          // get the user's data from the form fields
+          var fname = document.getElementById('fname').value;
+          var sname = document.getElementById('sname').value;
+          var email = document.getElementById('email').value;
+          var pass = document.getElementById('pass').value;
+          var address = document.getElementById('address').value;
+          var mobileNo = document.getElementById('mobileNo').value;
+          var gender = document.getElementById('gender').value;
+          var weight = document.getElementById('weight').value;
+          var height = document.getElementById('height').value;
+
+          // calculate the BMI
+          var bmi = calculateBMI(weight, height);
+
+          // show the result
+          showResult(bmi, fname, sname, email, pass, address, mobileNo, gender);
+        });
+
+        // add event listener to the done button
+        document.getElementById('doneButton').addEventListener('click', function() {
+          var fname = localStorage.getItem('fname');
+          var sname = localStorage.getItem('sname');
+          var email = localStorage.getItem('email');
+          var pass = localStorage.getItem('pass');
+          var address = localStorage.getItem('address');
+          var mobileNo = localStorage.getItem('mobileNo');
+          var gender = localStorage.getItem('gender');
+
+          // you can add code here to send the data to a server or perform some other action
+        });
+    </script>
+</body>
+</html>

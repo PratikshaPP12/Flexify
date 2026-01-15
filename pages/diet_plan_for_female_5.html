@@ -1,0 +1,184 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="plan.css"/>
+    <title>Male Diet Plan</title>
+    <style>
+        body {
+            margin: 0; /* remove default margin */
+            padding: 0; /* remove default padding */
+        }
+        
+        header, section {
+            margin-left: 0; /* move to the right side */
+            margin-right: auto; /* reset right margin */
+            padding-left: 20px; /* add some padding for readability */
+            padding-right: 20px; /* add some padding for readability */
+        }
+        .gif-section {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%; /* adjust the width as needed */
+            padding: 20px;
+        }
+        
+        .gif-section .row {
+            display: flex; /* add this to make the images flex */
+            justify-content: space-between; /* add this to make the images side by side */
+            margin-bottom: 20px; /* add some margin to create space between rows */
+        }
+        
+        .gif-section .image-container {
+            text-align: center; /* add this to center the image and text */
+            width: 45%; /* adjust the width to make the images aligned */
+        }
+        
+        .gif-section img {
+            width: 100%; /* adjust the width to make the images aligned */
+            height: auto;
+            margin: 10px; /* add some margin to create space between images */
+        }
+        
+        .gif-section .image-name {
+            font-size: 16px; /* adjust the font size as needed */
+            font-weight: bold; /* add this to make the text bold */
+            margin-top: 10px; /* add some margin to create space between the image and text */
+        }
+        .back-to-home {
+            position: fixed; /* change from absolute to fixed */
+            bottom: 20px; /* adjust the bottom position to create some space */
+            left: 50%; /* center the button horizontally */
+            transform: translateX(-50%); /* center the button horizontally */
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ccc;
+        }
+        
+        .back-to-home button {
+            background-color: #ffa07a; /* orange color */
+            color: #ffffff; /* white text color */
+            padding: 10px 20px; /* add padding to the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .back-to-home button:hover {
+            background-color: #ff9900; /* darker orange color on hover */
+        }
+        .diet-plan-button {
+            background-color: #ffa07a; /* orange color */
+            color: #ffffff; /* white text color */
+            padding: 10px 20px; /* add padding to the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .diet-plan-button:hover {
+            background-color: #ff9900; /* darker orange color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="margin-left: 0; padding-left: 20px;">Diet Plan for Female BMI under 5</h1>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="diet-plan-button" id="veg-button" onclick="showVegDietPlan()">Veg Diet Plan</button>
+            <button class="diet-plan-button" id="nonveg-button" onclick="showNonVegDietPlan()">Non-Veg Diet Plan</button>
+        </div>
+    </header>
+    <section>
+        <h2 style="margin-left: 0; padding-left: 20px;">Introduction</h2>
+        <p style="margin-left: 0; padding-left: 20px;">A Body Mass Index (BMI) under 5 is extremely low and indicates a severe underweight condition, which can be dangerous. This can result from malnutrition, an eating disorder, or a serious medical condition. It's important to consult a healthcare professional, such as a doctor or a registered dietitian, to develop a personalized plan.</p>
+    </section>
+    <section>
+        <h2 style="margin-left: 0; padding-left: 20px;">Goals</h2>
+        <ul style="margin-left: 0; padding-left: 20px;">
+            <li>Gradually increase calories to promote healthy weight gain without overwhelming the body.</li>
+            <li>Aim to eat 500–700 calories more than your typical daily intake</li>
+            <li>Incorporate calorie-dense yet nutritious foods.</li>
+        </ul>
+    </section>
+    <section>
+        <h2 style="margin-left: 0; padding-left: 20px;">Diet Plan</h2>
+        <div id="diet-plan-container" style="display: none;"></div>
+    </section>
+    <section class="gif-section">
+        <h2>Exercises</h2>
+        <div class="row">
+            <div class="image-container">
+                <img src="squad1.jpg" alt="STRECHING" style="width: 100%; height: auto;">
+                <p class="image-name">STRECHING</p>
+            </div>
+            <div class="image-container">
+                <img src="PUSHUP1.gif" alt="PUSHUP" style="width: 100%; height:auto;">
+                <p class="image-name">PUSHUP</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image-container">
+                <img src="WALLPUSHUPS.gif" alt="PLANK" style="width: 100%; height:auto">
+                <p class="image-name">PLANK</p>
+            </div>
+            <div class="image-container">
+                <img src="CHESSPRESS.gif" alt="SQUAD" style="width: 100%; height: auto;">
+                <p class="image-name">SQUAD</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="image-container">
+                <img src="ARMCIRCLE.GIF" alt="ARMCIRCLE" style="width: 100%; height:auto">
+                <p class="image-name">ARM CIRCLES</p>
+            </div>
+            <div class="image-container">
+                <img src="pullup.gif" alt="LEG RAISES" style="width: 100%; height:auto">
+                <p class="image-name">LEG RAISES</p>
+            </div>
+        </div>
+        <!-- Add more images as needed -->
+    </section>
+
+    <div class="back-to-home">
+        <button onclick="window.location.href='../index.html'">Back to Home</button>
+    </div>
+    
+    <script>
+        function showVegDietPlan() {
+            document.getElementById("diet-plan-container").innerHTML = `
+                <h2>Veg Diet Plan</h2>
+                <p>Breakfast: Smoothie: Blend 1 banana, 1 cup spinach, 1 cup almond milk, 2 tablespoons almond butter, and a scoop of protein powder (optional).
+Oatmeal: 1 cup cooked oats topped with 1 tablespoon honey, 1 tablespoon chia seeds.</p>
+                <p>Nut Butter and Fruit: 1 apple or banana with 2 tablespoons of peanut or almond butter.</p>
+                <p>Lunch: Quinoa Salad: 1 cup cooked quinoa with chickpeas, diced cucumber, cherry tomatoes, avocado, and a lemon-tahini dressing. </p>
+                <p>Afternoon Snack: Nut Butter and Fruit: 1 apple or banana with 2 tablespoons of peanut or almond butter. </p>
+                <p>Dinner: Stir-fry: 1 cup cooked brown rice or whole-grain pasta with mixed vegetables (like bell peppers, broccoli, and carrots) sautéed in olive oil, and tofu or tempeh for protein.</p>
+                <p>Evening Snack (if needed): Cottage Cheese or Yogurt: 1 cup topped with honey and a handful of nuts or granola.</p>
+                
+            `;
+            document.getElementById("diet-plan-container").style.display = "block";
+        }
+        
+        function showNonVegDietPlan() {
+            document.getElementById("diet-plan-container").innerHTML = `
+                <h2>Non-Veg Diet Plan</h2>
+                <p>Breakfast:  Omelette: 2-3 eggs with spinach, tomatoes, and cheese.
+Toast: 2 slices of whole-grain toast with butter or avocado.  </p>
+                <p>Mid-Morning Snack: Fruit - A banana or an orange. Nuts - A small handful of mixed nuts.</p>
+                <p>Lunch: Chicken Salad: Grilled chicken breast (about 100-150g) on a bed of mixed greens with avocado, nuts, cheese, and a vinaigrette dressing.</p>
+                <p>Afternoon Snack :Healthy Fats: Use oils (like olive oil or coconut oil) in cooking and dressings.: </p>
+                <p>Dinner:  Protein: Grilled fish (like salmon or tilapia) or chicken breast (about 150g).
+Veggies: Roasted vegetables (like sweet potatoes, carrots, and broccoli) drizzled with olive oil.</p>
+                <p>Evening Snack (if needed): Cottage Cheese: 1 cup topped with fruit or a spoonful of peanut butter.Dark chocolate: A small piece (optional).</p>
+                <p>Tips: Hydration - Drink plenty of water throughout the day . Portion Control - Adjust portion sizes based on your activity level and goals. Variety - Include a wide range of fruits, vegetables, whole grains, and proteins to ensure balanced nutrition. Snacks - Choose healthy snacks to maintain energy levels and avoid processed foods.</p>
+            `;
+            document.getElementById("diet-plan-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>

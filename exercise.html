@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Routine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .exercise-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .exercise-card {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .exercise-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .exercise-card h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .exercise-card p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <!-- display exercises based on BMI result -->
+        <script>
+            var bmiResult = localStorage.getItem('bmiResult');
+            var exerciseContainer = document.querySelector('.exercise-container');
+            if (bmiResult === 'Underweight') {
+                exerciseContainer.innerHTML = `
+                    <div class="exercise-card" id="underweight-exercise-1">
+                        <img src="underweight-exercise-1.gif" alt="Underweight Exercise 1">
+                        <h2>Underweight Exercise 1</h2>
+                        <p>Perform this exercise to improve your muscle mass.</p>
+                    </div>
+                    <div class="exercise-card" id="underweight-exercise-2">
+                        <img src="underweight-exercise-2.gif" alt="Underweight Exercise 2">
+                        <h2>Underweight Exercise 2</h2>
+                        <p>Perform this exercise to improve your muscle mass.</p>
+                    </div>
+                `;
+            } else if (bmiResult === 'Normal') {
+                exerciseContainer.innerHTML = `
+                    <div class="exercise-card" id="normal-exercise-1">
+                        <img src="normal-exercise-1.gif" alt="Normal Exercise 1">
+                        <h2>Normal Exercise 1</h2>
+                        <p>Perform this exercise to maintain your muscle mass.</p>
+                    </div>
+                    <div class="exercise-card" id="normal-exercise-2">
+                        <img src="normal-exercise-2.gif" alt="Normal Exercise 2">
+                        <h2>Normal Exercise 2</h2>
+                        <p>Perform this exercise to maintain your muscle mass.</p>
+                    </div>
+                    <div class="exercise-card" id="normal-exercise-3">
+                        <img src="normal-exercise-3.gif" alt="Normal Exercise 3">
+                        <h2>Normal Exercise 3</h2>
+                        <p>Perform this exercise to maintain your muscle mass.</p>
+                    </div>
+                    <div class="exercise-card" id="normal-exercise-4">
+                        <img src="normal-exercise-4.gif" alt="Normal Exercise 4">
+                        <h2>Normal Exercise 4</h2>
+                        <p>Perform this exercise to maintain your muscle mass.</p>
+                    </div>
+                    <div class="exercise-card" id="normal-exercise-5">
+                        <img src="normal-exercise-5.gif" alt="Normal Exercise 5">
+                        <h2>Normal Exercise 5</h2>
+                        <p>Perform this exercise to maintain your muscle mass.</p>
+                    </div>
+                `;
+            } else if (bmiResult === 'Overweight') {
+                // add overweight exercises here
+            } else if (bmiResult === 'Obese') {
+                // add obese exercises here
+            }
+        </script>
+    </div>
+</body>
+</html>

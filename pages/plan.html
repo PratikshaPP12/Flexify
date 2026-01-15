@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .thank-you {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fa5a20;
+            margin-top: 20px; /* add some margin to create space */
+        }
+        .logo {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .logo img {
+            display: block;
+            margin: 0 auto;
+            height: 200px; /* increase the height of the logo */
+            width: 200px; /* increase the width of the logo */
+        }
+        .back-to-home {
+            position: fixed; /* change from absolute to fixed */
+            bottom: 20px; /* adjust the bottom position to create some space */
+            left: 50%; /* center the button horizontally */
+            transform: translateX(-50%); /* center the button horizontally */
+            text-align: center;
+            padding: 20px;
+            background-color: #ffa07a; /* orange background color */
+            border-top: 1px solid #ccc;
+        }
+        .back-to-home button {
+            background-color: #ffa07a; /* orange background color */
+            color: #ffffff; /* white text color */
+            padding: 10px 20px; /* add padding to the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-to-home button:hover {
+            background-color: #fa5a20; /* darker orange color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="thank-you">Thank You!</h1>
+    <p style="text-align: center;"> <B>Get Fit with Our Programs</B></p>
+    <div class="logo">
+        <img src="logo5.jpg" height="200px" width="200px">
+    </div>
+    <P style="text-align: center;" > <B>Join Our Pricing Plan and Be Part of Our Family!! </B></P>
+    <P style="text-align: center;"><B>Explore our tailored plans to find the perfect fit for your needs.</B></P>
+    <div class="back-to-home">
+        <button onclick="goBackHome()">Back to Home</button>
+    </div>
+    <script>
+        function goBackHome() {
+            window.location.href = '../index.html'; // redirect to index.html in parent folder
+        }
+    </script>
+</body>
+</html>
